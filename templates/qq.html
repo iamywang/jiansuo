@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索 QQ</title>
+    <link rel="icon" type="image/icon" href="http://www.iconpng.com/png/colorabo/search.png">
+    <link rel="bookmark" type="image/icon" href="http://www.iconpng.com/png/colorabo/search.png">
+</head>
+<body>
+<style type="text/css">
+    body {
+        font-family: 微软雅黑;
+        color: white;
+        background-color: black;
+    }
+</style>
+<h2 align="center" style="color: lightcyan"><img src="http://www.iconpng.com/png/colorabo/search.png" width="36"
+                                                 height="36" align="center"> Whoosh 全文检索</h2>
+<h5 align="center" style="color: lightcyan">
+    <form action="/qq/" method="post">
+        请输入查询的内容
+        <input type="text" name="str" style="width: 400px">
+        <input type="submit" value="查询QQ" style="width: 100px">
+    </form>
+</h5>
+<p>
+<h3 align="center" style="color: lavenderblush">查询结果</h3></p>
+<style type="text/css">
+    /* Border styles */
+    #table-1 thead, #table-1 tr {
+        border-top-width: 2px;
+        border-top-style: solid;
+        border-top-color: aqua;
+    }
+
+    #table-1 {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-top-color: aqua;
+    }
+
+    /* Padding and font style */
+    #table-1 td, #table-1 th {
+        padding: 5px 10px;
+        font-size: 12px;
+        font-family: 微软雅黑;
+        color: black;
+    }
+
+    /* Alternating background colors */
+    #table-1 tr:nth-child(even) {
+        background: azure;
+    }
+
+    #table-1 tr:nth-child(odd) {
+        background: aquamarine;
+    }
+
+    #table-1 th:nth-child(odd) {
+        background: midnightblue;
+        color: white;
+    }
+
+    #table-1 th:nth-child(even) {
+        background: midnightblue;
+        color: white;
+    }
+</style>
+<table id="table-1" align="center">
+    <thead>
+    <tr>
+        <th width="50" align="center">序号</th>
+        <th width="150" align="center">QQ号</th>
+        <th width="200" align="center">昵称</th>
+        <th width="50" align="center">性别</th>
+        <th width="50" align="center">年龄</th>
+        <th width="50" align="center">Auth</th>
+        <th width="150" align="center">所在群号</th>
+        <th width="100" align="center">编号</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for lines in data %}
+        <tr>
+            <td align="center">{{ lines.num }}</td>
+            <td align="center">{{ lines.QQNum }}</td>
+            <td align="center">{{ lines.Nick }}</td>
+            <td align="center">{{ lines.Gender }}</td>
+            <td align="center">{{ lines.Age }}</td>
+            <td align="center">{{ lines.Auth }}</td>
+            <td align="center">{{ lines.QunNum }}</td>
+            <td align="center">{{ lines.ID }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
